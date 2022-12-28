@@ -1,0 +1,49 @@
+# The HTML DOM (Document Object Model)
+# When a web page is loaded, the browser creates a Document Object Model of the page.
+
+# The HTML DOM model is constructed as a tree of Objects:
+
+# Finding HTML Elements
+# When you want to access HTML elements with JavaScript, you have to find the elements first.
+
+# There are a couple of ways to do this:
+
+# Finding HTML elements by id
+# Finding HTML elements by tag name
+# Finding HTML elements by class name
+# Finding HTML elements by CSS selectors
+# Finding HTML elements by HTML object collections
+
+
+# X_PATH :--X PATH is used find the location of any element on a webpage using HTML DOM structure
+#TYPES OF X_PATH are
+# 1)ABSOLUTE X_PATH:
+# 1) IT contains the complete path from Root element of page to the desired element
+# 2)absolute path start from root node -with single forward slashes
+# 3)Drawback of Absolute X-path is any slight changes in DOM MAkes X_path Invalid
+
+# 2)RELATIVE X_PATH:
+# 1)It Starts from mid of the HTML DOM Structure
+# 2)It begins with double forward slash
+
+# X-PATH METHODS to find WEB ELEMENTS
+# 1]Start-With Function():
+# start with function is very helpful in finding dynamic webelements
+# you can use it to match starting value of webelement which remains static
+# ex id=session55666,id=session98989
+# here session is static so we can match this starting value to find the webelement
+# start-with function also used to find the element whose attribute value is static
+# Format:
+#   X-PATH=//tagname[start-with(@Attribute,Value)]
+
+
+# 2]contains function():
+# contain function is used for finding dynamic web elements
+# we can provide any partial Attribute value to find the webelement
+# Format:
+#   X-PATH=//tagname[contains(@Attribute,Value)]
+
+# 3]text():
+# text method is used to find elements eith exact text match
+# Format:
+#   X-PATH=//tagname[text()='ActualText']

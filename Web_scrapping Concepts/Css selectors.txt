@@ -1,0 +1,10 @@
+What is a CSS Selector?
+    1.CSS Selectors in Selenium are string patterns used to identify an element
+    based on a combination of HTML tag, id, class, and attributes.
+    
+The different types of CSS Locator in Selenium IDE
+1.Tag and ID
+2.Tag and class
+3.Tag and attribute
+4.Tag, class, and attribute
+5.Inner text

@@ -1,0 +1,36 @@
+What is Pytest:
+    Pytest is a testing framework based on python. It is mainly used to write API test cases
+    Pytest is a python based testing framework, which is used to write and execute test codes.
+    In the present days of REST services, pytest is mainly used for API testing even though we can use pytest to write simple to complex tests, 
+    i.e., we can write codes to test API, database, UI, etc.
+
+Advantages Of Pytest:
+    1.Pytest can run multiple tests in parallel, which reduces the execution time of the test suite.
+    2.Pytest has its own way to detect the test file and test functions automatically, if not mentioned explicitly.
+    3.Pytest allows us to skip a subset of the tests during execution.
+    4.Pytest allows us to run a subset of the entire test suite.
+    5.Pytest is free and open source.
+    6.Because of its simple syntax, pytest is very easy to start with.
+
+What is Assert:
+    # In Selenium, Asserts are validations or checkpoints for an application
+    # Asserts in Selenium validate the automated test cases that help testers understand,
+    # if tests have passed or failed.
+
+
+How To Execute of Subset of test suite:
+    #In a real scenario, we will have multiple test files and each file will have a number of tests. 
+        Suppose, we want to run only a specific set of tests; how do we go about it?
+    #Pytest provides two ways to run the subset of the test suite.
+        #Select tests to run based on substring matching of test names.
+        #Select tests groups to run based on the markers applied.
+
+        commamd:
+                pytest -k <substring> -v
+
+        -k <substring> represents the substring to search for in the test names.
+
+
+
+
+

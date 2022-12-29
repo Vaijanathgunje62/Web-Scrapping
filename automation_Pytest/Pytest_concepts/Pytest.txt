@@ -1,10 +1,17 @@
+Unittest vs Pytest:
+    Unittest is a Python unit testing framework. 
+    Pytest is a Python testing tool. 
+    Both help you test your Python code. 
+    Unittest is part of the Python Standard Library, so it comes pre-installed with Python. 
+    Pytest is not part of the Standard Library, so you will need to install it separately. 
+    Pytest is newer than unittest and has a more flexible approach to testing. 
+    It is also easier to use and has more features.
+
 What is Pytest:
-   1.Pytest is a testing framework based on python. It is mainly used to write API test cases
-   2.Pytest is a Python testing tool. 
-     It allows you to write test cases in Python and run them against your code to check for bugs.
-   3.Pytest is a python based testing framework, which is used to write and execute test codes.
-     In the present days of REST services, pytest is mainly used for API testing even though we can use pytest to write simple to complex tests, 
-     i.e., we can write codes to test API, database, UI, etc.
+    Pytest is a testing framework based on python. It is mainly used to write API test cases
+    Pytest is a python based testing framework, which is used to write and execute test codes.
+    In the present days of REST services, pytest is mainly used for API testing even though we can use pytest to write simple to complex tests, 
+    i.e., we can write codes to test API, database, UI, etc.
 
 Advantages Of Pytest:
     1.Pytest can run multiple tests in parallel, which reduces the execution time of the test suite.
@@ -16,8 +23,11 @@ Advantages Of Pytest:
 
 What is Assert:
     # In Selenium, Asserts are validations or checkpoints for an application
-    # Asserts in Selenium validate the automated test cases that help testers understand,
-     if tests have passed or failed.
+    # Asserts in Selenium validate the automated test cases that help testers understand,if tests have passed or failed.
+    # The assert keyword in Python can be used in a number of ways to verify that something is true.
+      For example, you could assert that a certain value is equal to another value, or that a certain condition is true. 
+      You can also use assert to check that an exception is raised, or that a certain warning is issued. 
+      Assert can be used in a number of different ways, so it really depends on what you are trying to verify.
     
 How to use print in Pytest:
     Use -s option while running the pytest command.
@@ -51,8 +61,6 @@ How To Execute of Subset of test suite:
                 pytest -k <substring> -v
 
         -k <substring> represents the substring to search for in the test names.
-
-
 
 	2)Pytest - Grouping the Tests:
 	    #Pytest allows us to use markers on test functions. Markers are used to set various features/attributes to test functions.
@@ -119,6 +127,7 @@ Parametrizing Of Test:
             @pytest.mark.parametrize("num, output",[(1,11),(2,22),(3,35),(4,44)])
             def test_multiplication_11(num, output):
             assert 11*num == output
+        command: pytest multiplication -v
 
 
 Pytest X-fail/Skip Tests:
@@ -175,7 +184,6 @@ Pytest Test Execution Results in XML:
     Example:
             pytest test_multiplication.py -v --junitxml="result.xml"
 
-
 SUMMARY:
         Installing pytest..
         Identifying test files and test functions.
@@ -191,3 +199,10 @@ SUMMARY:
         Stop test execution on n failures using pytest --maxfail = <num>.
         Running tests in parallel using pytest -n <num>.
         Generating results xml using pytest -v --junitxml = "result.xml".
+
+
+
+What is Monkey Patching:
+1.Monkey patching is the technique of dynamic modification of a piece of code at the run time.
+2.Monkey patching in python refers to modifying or updating a piece of code or class or any module at the runtime. 
+In simple words, we can change the behavior or working of a class/ module at the runtime without changing the whole python code.

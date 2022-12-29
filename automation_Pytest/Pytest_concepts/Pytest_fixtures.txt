@@ -1,0 +1,59 @@
+**Requesting” fixtures**:
+    1.Test functions request fixtures they require by declaring them as arguments
+    2.When pytest goes to run a test, it looks at the parameters in that test function’s signature,
+    and then searches for fixtures that have the same names as those parameters. 
+    Once pytest finds them, it runs those fixtures, captures what they returned (if anything), 
+    and passes those objects into the test function as arguments.
+
+
+#Fixtures can request other fixtures:
+    import pytest
+        @pytest.fixture
+        def first_entry():
+            return "a"
+
+        @pytest.fixture
+        def order(first_entry):
+            return [first_entry]
+
+        def test_string(order):
+            # Act
+            order.append("b")
+
+            # Assert
+            assert order == ["a", "b"]
+
+#Autouse fixtures (fixtures you don’t have to request):
+    Sometimes you may want to have a fixture (or even several) that you know all your tests will depend on. 
+    “Autouse” fixtures are a convenient way to make all tests automatically request them.
+    This can cut out a lot of redundant requests,
+        import pytest
+        
+        @pytest.fixture
+        def first_entry():
+            return "a"
+
+        @pytest.fixture
+        def order(first_entry):
+            return []
+
+        @pytest.fixture(autouse=True)
+        def append_first(order, first_entry):
+            return order.append(first_entry)
+
+        def test_string_only(order, first_entry):
+            assert order == [first_entry]
+
+        def test_string_and_int(order, first_entry):
+            order.append(2)
+            assert order == [first_entry, 2]
+
+#Fixture scopes:
+
+    Fixtures are created when first requested by a test, and are destroyed based on their scope:
+
+        1.function: the default scope, the fixture is destroyed at the end of the test.
+        2.class: the fixture is destroyed during teardown of the last test in the class.
+        3.module: the fixture is destroyed during teardown of the last test in the module.
+        4.package: the fixture is destroyed during teardown of the last test in the package.
+        5.session: the fixture is destroyed at the end of the test session.

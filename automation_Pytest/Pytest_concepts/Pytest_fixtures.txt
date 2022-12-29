@@ -49,11 +49,24 @@
             assert order == [first_entry, 2]
 
 #Fixture scopes:
-
     Fixtures are created when first requested by a test, and are destroyed based on their scope:
-
         1.function: the default scope, the fixture is destroyed at the end of the test.
         2.class: the fixture is destroyed during teardown of the last test in the class.
         3.module: the fixture is destroyed during teardown of the last test in the module.
         4.package: the fixture is destroyed during teardown of the last test in the package.
         5.session: the fixture is destroyed at the end of the test session.
+
+SetUp Method:
+      SetUp method will run the steps before your test
+
+TearDown Method:
+      Teardown Method will run the steps after
+
+Advantages of using Fixtures over Setup and Teardown Methods in unit testing:
+    Fixtures offer a number of advantages over setup and teardown methods in unit testing
+        1.fixtures can be reused across multiple tests, which can save a lot of time 
+           and effort in setting up and tearing down test environments
+        2.fixtures can be parametrized, which allows for greater flexibility in how tests are run
+        3.fixtures can be used to manage complex dependencies, such as database connections or thread pools.
+
+        

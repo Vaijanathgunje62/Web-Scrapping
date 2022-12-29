@@ -201,8 +201,13 @@ SUMMARY:
         Generating results xml using pytest -v --junitxml = "result.xml".
 
 
-
 What is Monkey Patching:
 1.Monkey patching is the technique of dynamic modification of a piece of code at the run time.
 2.Monkey patching in python refers to modifying or updating a piece of code or class or any module at the runtime. 
 In simple words, we can change the behavior or working of a class/ module at the runtime without changing the whole python code.
+
+Skipif decorator :
+    The skipif decorator is used to skip a test if a certain condition is met. 
+    For example, you might use this decorator to skip a test if a certain module is not installed.
+
+

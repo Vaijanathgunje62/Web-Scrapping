@@ -15,8 +15,26 @@ Advantages Of Pytest:
 What is Assert:
     # In Selenium, Asserts are validations or checkpoints for an application
     # Asserts in Selenium validate the automated test cases that help testers understand,
-    # if tests have passed or failed.
+     if tests have passed or failed.
+    
+How to use print in Pytest:
+    Use -s option while running the pytest command.
+    If you have any print statements in your code, they will get printed on the console.
+    pytest <testcase_to_execute> -s
 
+What are the rules for writing test cases using pytest:
+    Here are two basic rules you should remember while writing test cases.
+    1. Testcase function should start with the keyword test_.
+    2. Python file name should start with test_ or end with _test
+
+How to execute and run unit test cases:
+    There are different ways to execute the test cases.
+    1. Execute all test cases from all the Python files in the given directory.
+        command:  pytest
+    2. Execute all the test cases from the given Python file name.
+        command:  pytest <file_name>
+    3. Execute specific test cases from the given Python file.
+        command:  pytest <file_name>::<test_case>
 
 How To Execute of Subset of test suite:
     #In a real scenario, we will have multiple test files and each file will have a number of tests. 
@@ -126,3 +144,50 @@ Pytest X-fail/Skip Tests:
             Later, when the test becomes relevant we can remove the markers.
 
 
+Pytest - Stop Test Suite after N Test Failures:
+    if we want to stop the execution of test suite soon after n number of test fails. 
+    This can be done in pytest using maxfail.
+
+    syntax:
+            pytest --maxfail = <num>
+
+Pytest: Run Tests in Parallel:
+    By default, pytest runs tests in sequential order. 
+    In a real scenario,a test suite will have a number of test files and each file will have a bunch of tests. 
+    This will lead to a large execution time. To overcome this, pytest provides us with an option to run tests in parallel.
+
+    we need to install :"pytest-xdist"
+
+    command: pip install pytest-xdist
+
+    syntax : pytest -n <num>
+    Example: pytest -n 3
+
+            -n <num> runs the tests by using multiple workers, here it is 3
+
+Pytest Test Execution Results in XML:
+    We can generate the details of the test execution in an xml file.
+
+    command: 
+            pytest <filename> -v --junitxml="result.xml"
+    Example:
+            pytest test_multiplication.py -v --junitxml="result.xml"
+
+
+
+
+SUMMARY:
+        Installing pytest..
+        Identifying test files and test functions.
+        Executing all test files using pytest –v.
+        Executing specific file usimng pytest <filename> -v.
+        Execute tests by substring matching pytest -k <substring> -v.
+        Execute tests based on markers pytest -m <marker_name> -v.
+        Creating fixtures using @pytest.fixture.
+        conftest.py allows accessing fixtures from multiple files.
+        Parametrizing tests using @pytest.mark.parametrize.
+        Xfailing tests using @pytest.mark.xfail.
+        Skipping tests using @pytest.mark.skip.
+        Stop test execution on n failures using pytest --maxfail = <num>.
+        Running tests in parallel using pytest -n <num>.
+        Generating results xml using pytest -v --junitxml = "result.xml".

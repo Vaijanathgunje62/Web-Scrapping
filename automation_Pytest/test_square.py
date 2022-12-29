@@ -10,7 +10,8 @@ def test_sqrt():
 @pytest.mark.square
 def testsquare():
    num = 7
-   assert 7*7 == 40
+   print(num)
+   assert 7*7 == 49
 
 @pytest.mark.others
 def test_equality():

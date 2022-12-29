@@ -1,10 +1,25 @@
+What is CSS:
+    1.CSS stands for cascade style sheet
+    2.CSS is a style sheet langauge which describes the presentation of the HTML document
+
 What is a CSS Selector?
     1.CSS Selectors in Selenium are string patterns used to identify an element
     based on a combination of HTML tag, id, class, and attributes.
+    2.CSS Selectors are used to target the elements on web pages.   
+
+    Syntax : tagName[AttributeName='AttributeValue]
+    Example: input[id='name']
     
 The different types of CSS Locator in Selenium IDE
-1.Tag and ID
-2.Tag and class
-3.Tag and attribute
-4.Tag, class, and attribute
-5.Inner text
+    1.Tag and ID
+    2.Tag and class
+    3.Tag and attribute
+    4.Tag, class, and attribute
+    5.Inner text
+
+
+CSS SELECTOR: SELECT by ID:
+    1.If the WebElement has an Id attribute you can use the ID attribute details in CSS selector
+    2.ID attribute in CSS selector is Symbolised by the hash(#) Sign
+    Syntax: tagName#element_id
+    Example: input#first_name

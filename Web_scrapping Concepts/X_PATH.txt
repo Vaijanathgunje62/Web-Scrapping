@@ -1,6 +1,10 @@
 # The HTML DOM (Document Object Model)
 # When a web page is loaded, the browser creates a Document Object Model of the page.
 
+# We Use X_PATH:
+    XPath is a query language for selecting nodes from an XML document. 
+    This will help us locate an element when the HTML code isn’t simple.
+
 # The HTML DOM model is constructed as a tree of Objects:
 
 # Finding HTML Elements
@@ -47,3 +51,18 @@
 # text method is used to find elements eith exact text match
 # Format:
 #   X-PATH=//tagname[text()='ActualText']
+
+
+
+Examples:
+1.Link:Features
+    1.Text():
+        we can use Text() (text_function) to target Link elements in webpage:
+        syntax : //tagname[text()='string']
+        Examples : //a[text()='Features]
+    2.contains:
+        syntax : //tagname[contain(text(),'string')]
+        Examples : //a[contain(text(),'Features')]
+
+2.Buttons:
+      examples:

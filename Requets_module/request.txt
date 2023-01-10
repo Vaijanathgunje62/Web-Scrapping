@@ -1,0 +1,19 @@
+There are two main components to initiate the communication - Client and Server.
+We use HTTP (Hypertext Transfer Protocol), which enables the communication between a client and server over the Internet.
+Python provides the requests module, which allows us to make these requests using the Python script.
+
+#Request_Library:
+    1.Requests library is one of the integral part of Python for making HTTP requests to a specified URL.      
+    2.Python requests module has several built-in methods to make Http requests to specified URL
+      using GET, POST, PUT, PATCH or HEAD requests
+    3.A Http request is meant to either retrieve data from a specified URI or to push data to a server
+    4.It works as a request-response protocol between a client and a server.
+   
+    it is the most powerful tool of Python that allows us to send requests on the web. 
+    It includes many features and methods to send HTTP requests. The system that sends requests is known as the client,
+    and the system that holds the webserver is known as a server.
+
+#Methods:
+    GET - It is used to request data from a server.
+    POST - It is used to submit some data to the server for processing it.
+

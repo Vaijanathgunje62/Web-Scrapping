@@ -56,13 +56,13 @@
         4.package: the fixture is destroyed during teardown of the last test in the package.
         5.session: the fixture is destroyed at the end of the test session.
 
-SetUp Method:
+#SetUp Method:
       SetUp method will run the steps before your test
 
-TearDown Method:
-      Teardown Method will run the steps after
+#TearDown Method:
+      Teardown Method will run the steps after  your test
 
-Advantages of using Fixtures over Setup and Teardown Methods in unit testing:
+#Advantages of using Fixtures over Setup and Teardown Methods in unit testing:
     Fixtures offer a number of advantages over setup and teardown methods in unit testing
         1.fixtures can be reused across multiple tests, which can save a lot of time 
            and effort in setting up and tearing down test environments

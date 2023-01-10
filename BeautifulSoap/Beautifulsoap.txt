@@ -1,0 +1,123 @@
+BeautifulSoap:
+   1.Beautiful Soup is a Python package for parsing HTML and XML documents.
+     It creates a parse tree for parsed pages that can be used to extract data from HTML, which is useful for web scraping.
+   2.Beautiful Soup provides simple methods for navigating, searching, and modifying a parse tree in HTML, XML files.
+     It transforms a complex HTML document into a tree of Python objects. 
+     It also automatically converts the document to Unicode, so you don't have to think about encodings.
+
+Beautifulsoup – Kinds of objects:
+    When the string or HTML document is given in the constructor of BeautifulSoup, 
+    this constructor converts this document to different python objects. 
+
+    The four major and important objects are : 
+        1.BeautifulSoup Object
+        2.Tag Object
+        3.NavigableString Object
+        4.Comments Object
+
+    1.BeautifulSoup Object:
+                    The BeautifulSoup object represents the parsed document as a whole.
+                    So, it is the complete document which we are trying to scrape. 
+                    For most purposes, you can treat it as a Tag object.
+
+                    from bs4 import BeautifulSoup
+
+             Ex.    soup = BeautifulSoup('''<h1>Geeks for Geeks</h1>''',
+                                        "html.parser")
+                    print(type(soup))
+
+                    Output:  <class 'bs4.BeautifulSoup'>
+
+    2.Tag Object   : 
+                    1.Tag object corresopnds to an XML or HTML tag in the original document.
+                    2.this object is usually used to extract a tag from the whole HTML document
+                    3.this object returns the first found tag if your document has multiple tags with the same name.
+
+            The tag contains many methods and attributes. And two important features of a tag are its name and attributes.
+                1.Name
+                2.Attributes          
+ 
+            1.Name:
+                Ex.
+                        from bs4 import BeautifulSoup
+                            # Initialize the object with an HTML page
+                                soup = BeautifulSoup('''
+                                    <html>
+                                        <b>Hello Everyone</b>
+                                    </html>
+                                    ''', "html.parser")
+                                
+                            # Get the tag
+                                tag = soup.b
+
+                            # Print the output
+                                print(tag.name)   -----------> output:'b'
+                            
+                            # changing the tag
+                            tag.name = "Strong"
+                            print(tag)            -----------> output: <Strong>Hello Everyone</Strong>
+
+            2.Attribute:
+                    Anything that is NOT tag, is basically an attribute and must contain a value.
+                    A tag object can have many attributes and can be accessed either through accessing the keys
+                    We can also modify the attributes and their value.
+
+
+    3.NavigableString Object: A string corresponds to a bit of text within a tag. 
+                              Beautiful Soup uses the NavigableString class to contain these bits of text.
+          
+    4.Comment Object        : The Comment object is just a special type of NavigableString.
+                              it is used to make the codebase more readable.
+
+                
+Navigation with BeautifulSoup :
+    1.Navigating Downwards:
+      1.by tag name
+      2.by .contents and .children
+      3.by .descendents
+      4.by .string:
+                   If the tag has only one child, and that child is a NavigableString, 
+                   the child is made available as .string
+      5.by .strings and .striped_strings:
+        1. by .strings:
+                       If there’s more than one thing inside a tag, you can still look at just the strings.
+                       Use the .strings generator.
+                        ex.
+                            soup = BeautifulSoup(ht_doc, 'html.parser')
+                            for string in soup.strings :
+                                print(repr(string))
+
+        2. by .striped_strings:
+                        For removal of extra whitespaces, we use .stripped_strings generator :
+                        ex .
+                                soup = BeautifulSoup(ht_doc, 'html.parser')
+                                for string in soup.stripped_strings :
+                                    print(repr(string))
+                        
+
+    2.Navigating Upwards Through BeautifulSoup :
+      If we consider a “family tree” analogy, every tag and every string has a parent: 
+      the tag that contains it:
+      1) .parent : .parent tag is used for retrieving the element’s parent element
+      2) .parents : For iterating all over the parent elements, .parents tag can be used 
+
+    3.Navigating Sideways With BeautifulSoup:
+    .next_sibling and .previous_sibling are the tags that are used for navigating between page elements 
+    that are on same level of the parse tree. 
+
+    ex. 
+        from bs4 import BeautifulSoup
+        sibling_soup = BeautifulSoup("<a>
+                                         <b> biggets sale </b>
+                                         <c><strong>The Biggest Online Tutorials Library, It's all Free</strong></c>
+                                      </a>")
+        
+        # to retrieve next sibling of b tag
+        print(sibling_soup.b.next_sibling)
+        
+        # for retrieving previous sibling of c tag
+        print(sibling_soup.c.previous_sibling)
+
+
+
+Searching 
